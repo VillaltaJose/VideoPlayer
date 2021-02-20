@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Player 🤙</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/font.css">
 </head>
 <body>
-    
+    <video src="" id="video"></video>
+
+    <div id="controllers" style="opacity: 1;" class="controllers">
+        <div onclick="toggleControllers()" class="overlay"></div>
+        <div></div>
+
+        <div class="controlls">
+            <i class="fa fa-fast-backward"></i>
+            <i id="play" class="fa fa-play play-button" onclick="togglePlay()"></i>
+            <i id="pause" style="display: none;" class="fa fa-pause play-button" onclick="togglePlay()"></i>
+            <i class="fa fa-fast-forward"></i>
+        </div>
+
+        <div class="info">
+            <p mm-bind="currentTime"></p>
+            <div onclick="setTime(event)" id="bar" class="bar">
+                <div onclick="setTime(event)" id="progress" class="progress"></div>
+            </div>
+            <p mm-bind="leftTime"></p>
+        </div>
+    </div>
+
+    <script src="scripts/video.js"></script>
 </body>
 </html>
